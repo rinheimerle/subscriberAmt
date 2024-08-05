@@ -94,7 +94,8 @@ try {
       const valueEl = document.createElement("p");
       valueEl.innerHTML = "Bringing in: $" + value;
       
-      document.append(subCountEl, valueEl);
+      const parent = document.getElementById("currentStats");
+      parent.append(subCountEl, valueEl);
     }
   }
 
