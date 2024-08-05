@@ -1,4 +1,5 @@
 const link = document.getElementById("connect");
+console.log(link);
 
 const getCookieValue = (cookieName) => {
 	const cookieValue = document.cookie.match('(^|;)\\s*' + cookieName + '\\s*=\\s*([^;]+)');
