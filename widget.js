@@ -86,8 +86,15 @@ try {
     const value = subscribers.reduce((acc, currentValue) => acc + currentTierPlans[currentValue.tier], 0);
     
     if (Number(value)) {
-      document.getElementById("subscriberCount").innerHTML += subscriberCount;
-      document.getElementById("subscriberAmount").innerHTML += Math.round(Number(value));
+      // document.getElementById("subscriberCount").innerHTML += subscriberCount;
+      // document.getElementById("subscriberAmount").innerHTML += Math.round(Number(value));
+      const subCountEl = document.createElement("p")
+      subCountEl.innerHTML = "Subscriber Count: " + subscriberCount;
+
+      const valueEl = document.createElement("p");
+      valueEl.innerHTML = "Bringing in: $" + value;
+      
+      document.append(subCountEl, valueEl);
     }
   }
 
