@@ -92,7 +92,7 @@ try {
       subCountEl.innerHTML = "Subscriber Count: " + subscriberCount;
 
       const valueEl = document.createElement("p");
-      valueEl.innerHTML = "Bringing in: $" + value;
+      valueEl.innerHTML = "Bringing in: $" + Math.round(Number(value));
       
       const parent = document.getElementById("currentStats");
       parent.append(subCountEl, valueEl);
