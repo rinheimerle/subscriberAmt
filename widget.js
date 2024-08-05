@@ -9,13 +9,13 @@ const getCookieValue = (cookieName) => {
 if (window.location.hash.includes("access_token")) {
   document.write("I JUST CONNECTED");
   document.cookie = "accessToken=" + window.location.hash?.split("&").find(param => param.includes("access_token"))?.split("=")[1];
-  // window.location.replace("https://rinheimerle.github.io/subscriberAmt/index.html");
+  window.location.replace("https://rinheimerle.github.io/subscriberAmt/");
 }
 
 const accessToken = getCookieValue("accessToken");
 
 const clientID = "xje2uk6zcuxl6kn1kyylxy1ql134n5";
-const params = `?response_type=token+id_token&client_id=${clientID}&redirect_uri=https://rinheimerle.github.io/subscriberAmt/index.html&scope=channel%3Aread%3Asubscriptions+openid&output=embed`;
+const params = `?response_type=token+id_token&client_id=${clientID}&redirect_uri=https://rinheimerle.github.io/subscriberAmt/&scope=channel%3Aread%3Asubscriptions+openid&output=embed`;
 const baseURL = "https://api.twitch.tv/helix/";
 
 if (!accessToken) {
@@ -81,7 +81,7 @@ try {
     document.cookie = "subscriberCount=" + json.total;
 
     // pull out broadcaster
-    const subscribers = json.data.map(sub => sub["user_login"] === sub["broadcaster_login"]);
+    const subscribers = json.data;
     // TODO pull out the broadcaster from this list
     const value = subscribers.reduce((acc, currentValue) => acc + currentTierPlans[currentValue.tier], 0);
     
