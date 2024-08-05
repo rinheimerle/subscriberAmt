@@ -7,6 +7,7 @@ const getCookieValue = (cookieName) => {
 }
 
 if (window.location.hash.includes("access_token")) {
+  document.write("I JUST CONNECTED");
   document.cookie = "accessToken=" + window.location.hash?.split("&").find(param => param.includes("access_token"))?.split("=")[1];
   // window.location.replace("https://rinheimerle.github.io/subscriberAmt/index.html");
 }
