@@ -14,7 +14,7 @@ if (window.location.hash.includes("access_token")) {
 const accessToken = getCookieValue("accessToken");
 
 const clientID = "xje2uk6zcuxl6kn1kyylxy1ql134n5";
-const params = `?response_type=token+id_token&client_id=${clientID}&redirect_uri=https://rinheimerle.github.io/subscriberAmt/index.html&scope=channel%3Aread%3Asubscriptions+openid`;
+const params = `?response_type=token+id_token&client_id=${clientID}&redirect_uri=https://rinheimerle.github.io/subscriberAmt/index.html&scope=channel%3Aread%3Asubscriptions+openid&output=embed`;
 const baseURL = "https://api.twitch.tv/helix/";
 
 if (!accessToken) {
